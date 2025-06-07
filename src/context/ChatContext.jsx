@@ -53,7 +53,7 @@ export const  ChatProvider = ({ children }) => {
 
 const fetchats = async () => {
   try {
-    const res = await fetch("api/GetAllchats", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/GetAllchats`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const fetchats = async () => {
 
  const cretaechatnew = async () =>{
   setcreatchatLod(true)
-  const res = await fetch("api/new",{
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/new`,{
     method:"POST",
     headers:{
       "Content-Type":"application/json"
@@ -87,7 +87,7 @@ const fetchats = async () => {
  const fetcmessage = async() =>{
    try {
     
-     const res = await fetch(`api/getAllconver/${selected}`,{
+     const res = await fetch(`${import.meta.env.VITE_API_URL}/getAllconver/${selected}`,{
       method:"GET",
       header:{
         "Content-Type":"application/json"
@@ -105,7 +105,7 @@ const fetchats = async () => {
  },[selected])
 
  const deleleteConv= async() =>{
-  const res = await fetch(`api/deleteconv/${selected}`,{
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/deleteconv/${selected}`,{
     method:"post",
     headers:{
       "Content-Type":"application/josn"

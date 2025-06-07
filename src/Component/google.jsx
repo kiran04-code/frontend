@@ -14,7 +14,7 @@ const Google = () => {
     const result = await signInWithPopup(auth,provider);
    e.preventDefault();
     try{
-      const res = await fetch("api/google",{
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/google`,{
       method:"POST",
       headers:{
         "Content-type":"application/json"
