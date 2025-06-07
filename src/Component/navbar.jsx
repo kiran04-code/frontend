@@ -10,7 +10,7 @@ const Navbar = () => {
   const data = useSelector(state => state.user);
 
   const handlelogout = async () => {
-    const res = await fetch("api/Logout");
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/Logout`);
     const data = await res.json();
     if (data.sucess) {
       navigate("/");
